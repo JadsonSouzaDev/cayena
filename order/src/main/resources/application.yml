@@ -30,3 +30,12 @@ logging:
     level:
         root: INFO
         br.com.cayena: INFO
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
