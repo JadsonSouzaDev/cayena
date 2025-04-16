@@ -1,0 +1,32 @@
+spring:
+    application:
+        name: order
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8180/realms/cayena}
+                    jwk-set-uri: ${KEYCLOAK_JWK_URI:http://localhost:8180/realms/cayena/protocol/openid-connect/certs}
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/order
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: false
+
+server:
+    port: ${PORT:8080}
+
+logging:
+    level:
+        root: INFO
+        br.com.cayena: INFO
